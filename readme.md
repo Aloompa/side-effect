@@ -2,6 +2,10 @@
 
 A tiny dependency injection library for managing and mocking side effects.
 
+## Installation
+
+`npm install @aloompa/side-effect -D`
+
 ## Usage
 
 First you need to create an effect. This basically just means wrapping any side effect in your code with the `effect()` function and giving it a name. So this:
