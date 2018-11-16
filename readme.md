@@ -6,7 +6,7 @@ A tiny dependency injection library for managing and mocking side effects.
 
 First you need to create an effect. This basically just means wrapping any side effect in your code with the `effect()` function and giving it a name. So this:
 
-```
+```javascript
 const fetchData = () => {
     // ... some side effect
 });
@@ -14,7 +14,7 @@ const fetchData = () => {
 
 Becomes this:
 
-```
+```javascript
 import { effect } from '@aloompa/side-effects';
 
 const fetchData = effect('fetch-my-data', () => {
@@ -26,7 +26,7 @@ It is important to note that at this point, both function expose exactly the sam
 
 Finally, when you need to test the business logic around your side effects, you can mock the side effects using `mock()`:
 
-```
+```javascript
 import { mock, effect } from '@aloompa/side-effects';
 
 const fetchData = effect('fetch-my-data', () => {
@@ -43,7 +43,7 @@ fetchData();
 
 Finally, you should clean up after yourself after every test. This can be done using `reset()` or `restAll()`:
 
-```
+```javascript
 import { reset } from '@aloompa/side-effects';
 
 reset('fetch-my-data');
