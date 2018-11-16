@@ -1,4 +1,4 @@
-import { effect, mock, reset, resetAll } from '../index';
+import { effect, mock, reset, resetAll } from '../sideEffect';
 
 describe('Side Effects', () => {
     const EFFECT_NAME = 'times-two';
@@ -35,5 +35,14 @@ describe('Side Effects', () => {
 
         const result2 = effect('first-effect', () => 1);
         expect(result2()).toEqual(1);
+    });
+
+    it('Should be possible to mock later', () => {
+        const plusTwo = a => a + 2;
+        const result = effect(EFFECT_NAME, timesTwo);
+
+        mock(EFFECT_NAME, plusTwo);
+        expect(result(4)).toEqual(6);
+        reset(EFFECT_NAME);
     });
 });

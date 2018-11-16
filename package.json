@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "compile": "./node_modules/.bin/babel src --out-dir lib --extensions \".ts\"",
+    "compile:types": "./node_modules/.bin/tsc src/index --outDir lib --emitDeclarationOnly --declaration",
     "test": "node_modules/.bin/jest",
     "test:watch": "node_modules/.bin/jest --watchAll",
-    "prepublish": "npm test; npm run compile"
+    "prepublish": "npm test; npm run compile; npm run compile:types"
   },
   "author": "Aloompa",
   "license": "MIT",

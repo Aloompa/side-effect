@@ -51,11 +51,11 @@ reset('fetch-my-data');
 
 ## API
 
-### effect (name: string, value: any)
+### effect (name: string, method: function)
 
 This declares an effect and makes it mockable. While the examples show mocking a function, effect can just as easily be used to mock an object, class or any other type.
 
-### mock (name: string, value: any)
+### mock (name: string, method: function)
 
 This declares a mock so that anytime an effect with the name you pass in is executed, it will execute the mock instead.
 
