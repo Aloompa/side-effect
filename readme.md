@@ -4,7 +4,7 @@ A tiny dependency injection library for managing and mocking side effects.
 
 ## Installation
 
-`npm install @aloompa/side-effect -D`
+`npm install @aloompa/side-effect -S`
 
 ## Usage
 
