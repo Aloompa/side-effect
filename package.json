@@ -1,0 +1,44 @@
+{
+  "name": "@aloompa/side-effect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "./node_modules/.bin/babel src --out-dir lib --extensions \".ts\"",
+    "test": "node_modules/.bin/jest",
+    "test:watch": "node_modules/.bin/jest --watchAll",
+    "prepublish": "npm test; npm run compile"
+  },
+  "author": "Aloompa",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.6",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx)$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "coverageReporters": [
+      "html",
+      "json"
+    ]
+  }
+}
