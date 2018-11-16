@@ -2,3 +2,4 @@ src
 node_modules
 coverage
 *.md
+.DS_Store
